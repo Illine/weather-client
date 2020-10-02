@@ -13,8 +13,8 @@ bootJar {
 
 ext {
     set("springCloudVersion", "Hoxton.SR6")
-    set("springRetryVersion", "1.2.5.RELEASE")
-    set("groovyVersion", "2.5.5")
+    set("p6spyVersion", "3.9.0")
+    set("postgresVersion", "42.2.5")
     set("lombokVersion", "1.18.8")
     set("junitVersion", "5.4.2")
 }
@@ -43,8 +43,13 @@ dependencies {
     api "org.springframework.boot:spring-boot-starter-actuator"
     api "org.springframework.boot:spring-boot-starter-web"
     api "org.springframework.boot:spring-boot-starter-validation"
+    api "org.springframework.boot:spring-boot-starter-data-jpa"
     api "org.springframework.cloud:spring-cloud-starter-sleuth"
     api "org.springframework.cloud:spring-cloud-starter-kubernetes-config"
+
+    api "p6spy:p6spy:${p6spyVersion}"
+
+    runtimeOnly "org.postgresql:postgresql:${postgresVersion}"
 
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     compileOnly "org.springframework.boot:spring-boot-configuration-processor"
