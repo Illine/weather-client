@@ -8,7 +8,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         temp.use_jdbc_metadata_defaults: false
-        default_schema: client
+        default_schema: ${spring.datasource.hikari.schema}
     open-in-view: false
   data:
     jpa:
@@ -28,3 +28,6 @@ spring:
       idle-timeout: 200000
       minimum-idle: 2
       schema: client
+  groovy:
+    template:
+      check-template-location: false

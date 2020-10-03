@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.0
+      author: eekovtun
+      comment: Database Initial
+      changes:
+        - tagDatabase:
+            tag: 1.0.0
+
+  - include:
+      file: ddl/users.sql
+      relativeToChangelogFile: true
+  - include:
+      file: ddl/devices.sql
+      relativeToChangelogFile: true
+  - include:
+      file: ddl/locations.sql
+      relativeToChangelogFile: true
+  - include:
+      file: grant/client.sql
+      relativeToChangelogFile: true
